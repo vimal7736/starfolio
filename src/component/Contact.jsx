@@ -1,10 +1,10 @@
 
 export default function Contact() {
   return (
-    <div className="b text-stone-300 py-16 px-4 lg:px-20">
+    <div className=" text-stone-300 py-16 px-4 lg:px-20">
       <h2 className="text-4xl  text-center mb-10">Contact Me</h2>
 
-      <div className="max-w-3xl mx-auto p-8 bg-transparent text-gray-600 rounded-lg shadow-2xl mb-10">
+      <div className="max-w-3xl mx-auto p-8 bg-transparent text-gray-600 rounded-full shadow-2xl mb-10">
         <h3 className="text-4xl font-bold text-center mb-6">Vimal Suresh T.</h3>
         <div className="space-y-4 text-center">
           <p><span className="font-bold">Email:</span> vimalonboard69@gmail.com</p>

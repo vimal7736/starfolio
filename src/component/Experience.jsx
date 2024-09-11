@@ -7,7 +7,7 @@ export default function Experience({ experiences }) {
       <h2 className="my-20 text-center text-4xl  text-gray-400">
         Experience
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 text-stone-200 gap-12">
         {experiences.map((experience, index) => (
           <motion.div
             key={index}
@@ -21,10 +21,10 @@ export default function Experience({ experiences }) {
             <h3 className="text-3xl font-semibold text-teal-600">
               {experience.title}
             </h3>
-            <h4 className="text-xl text-gray-500">
+            <h4 className="text-xl text-gray-300">
               {experience.company} - {experience.duration}
             </h4>
-            <ul className="mt-4 space-y-2 list-disc pl-5 text-gray-700">
+            <ul className="mt-4 space-y-2 list-disc pl-5 text-gray-500">
               {experience.responsibilities.map((item, idx) => (
                 <motion.li
                   key={idx}
@@ -41,7 +41,7 @@ export default function Experience({ experiences }) {
             {experience.projects && (
               <div className="mt-6">
                 <h4 className="text-xl font-bold text-teal-600">Projects:</h4>
-                <ul className="mt-2 list-disc pl-5 text-gray-700">
+                <ul className="mt-2 list-disc pl-5 text-gray-500">
                   {experience.projects.map((project, idx) => (
                     <motion.li
                       key={idx}

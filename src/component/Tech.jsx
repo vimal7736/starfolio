@@ -4,16 +4,16 @@ import { SiMongodb, SiExpress, SiTailwindcss, SiPrisma, SiClerk } from 'react-ic
 import { useInView } from 'react-intersection-observer';
 
 const techItems = [
-  { Icon: FaReact, color: 'text-blue-500', label: 'React' },
-  { Icon: SiMongodb, color: 'text-green-600', label: 'MongoDB' },
-  { Icon: FaNodeJs, color: 'text-green-500', label: 'Node.js' },
-  { Icon: SiExpress, color: 'text-gray-600', label: 'Express' },
-  { Icon: SiTailwindcss, color: 'text-cyan-500', label: 'Tailwind CSS' },
   { Icon: FaHtml5, color: 'text-orange-600', label: 'HTML' },
   { Icon: FaCss3Alt, color: 'text-blue-600', label: 'CSS' },
+  { Icon: FaReact, color: 'text-blue-500', label: 'React' },
   { Icon: FaJsSquare, color: 'text-yellow-500', label: 'JavaScript' },
+  { Icon: SiTailwindcss, color: 'text-cyan-500', label: 'Tailwind CSS' },
+  { Icon: FaNodeJs, color: 'text-green-500', label: 'Node.js' },
   { Icon: SiPrisma, color: 'text-gray', label: 'Prisma' },
+  { Icon: SiExpress, color: 'text-gray-600', label: 'Express' },
   { Icon: SiClerk, color: 'text-gray-500', label: 'Clerk' },
+  { Icon: SiMongodb, color: 'text-green-600', label: 'MongoDB' },
 ];
 
 export default function Tech() {

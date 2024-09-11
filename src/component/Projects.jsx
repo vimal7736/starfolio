@@ -5,11 +5,11 @@ export default function Projects({ projects }) {
   return (
     <div className="pb-24 ">
       <h2 className="my-20 text-center text-4xl text-white">Projects</h2>
-      <div className="flex flex-wrap justify-center gap-8">
+      <div className="flex flex-wrap  justify-center gap-8">
         {projects.map((project, index) => (
           <motion.div
             key={index}
-            className="p-6  shadow-xl rounded-lg w-full lg:w-1/3"
+            className="p-6 border  border-transparent rounded-2xl w-full lg:w-1/3"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.2 }}
@@ -17,10 +17,10 @@ export default function Projects({ projects }) {
             whileTap={{ scale: 0.95 }}
           >
             <h3 className="text-2xl font-bold mb-2 text-teal-300">{project.title}</h3>
-            <p className="mt-2 text-lg text-gray-300">{project.description}</p>
+            <p className="mt-2 text-lg text-gray-400">{project.description}</p>
             <div className="mt-4">
               <h4 className="font-bold text-teal-500">Technologies:</h4>
-              <p className="text-gray-400">{project.technologies.join(', ')}</p>
+              <p className="text-gray-500">{project.technologies.join(', ')}</p>
             </div>
             <div className="mt-4">
               <motion.a
