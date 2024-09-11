@@ -11,12 +11,12 @@ export default function Experience({ experiences }) {
         {experiences.map((experience, index) => (
           <motion.div
             key={index}
-            className="p-8 rounded-lg shadow-lg  border border-gray-950"
+            className="p-8 rounded-md shadow-2xl border-gray-950"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: index * 0.2 }}
+            transition={{ duration: 0.6}}
             viewport={{ once: true }}
-            whileHover={{ scale: 1.05, boxShadow: '0px 0px 25px rgba(0, 150, 136, 0.4)' }}
+            whileHover={{ scale: 1.05, boxShadow: '0px 0px 15px rgba(0, 150, 136, 0.4)' }}
           >
             <h3 className="text-3xl font-semibold text-teal-600 pb-4 ">
               {experience.title}

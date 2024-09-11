@@ -35,8 +35,8 @@ export default function Tech() {
             className="flex flex-col items-center"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }}
-            transition={{ duration: 0.6, delay: index * 0.1 }}
-            whileHover={{ scale: 1.3, x: -10 }}
+            transition={{ duration: 0.6 }}
+            whileHover={{ scale: 1.4, y: -30 }}
           >
             <Icon className={`text-6xl ${color}`} />
             <p>{label}</p>
