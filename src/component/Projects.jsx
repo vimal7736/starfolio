@@ -9,10 +9,10 @@ export default function Projects({ projects }) {
         {projects.map((project, index) => (
           <motion.div
             key={index}
-            className="p-6 border  border-transparent rounded-2xl w-full lg:w-1/3"
+            className="p-6 border border-gray-950 rounded-2xl w-full lg:w-1/3"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.2 }}
+            transition={{ duration: 0.5 }}
             whileHover={{ scale: 1.1, boxShadow: '0px 0px 15px rgba(255, 255, 255, 0.4)' }}
             whileTap={{ scale: 0.95 }}
           >

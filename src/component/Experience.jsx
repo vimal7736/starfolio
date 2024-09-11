@@ -11,7 +11,7 @@ export default function Experience({ experiences }) {
         {experiences.map((experience, index) => (
           <motion.div
             key={index}
-            className="p-8 rounded-lg shadow-lg  border border-gray-800"
+            className="p-8 rounded-lg shadow-lg  border border-gray-950"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: index * 0.2 }}

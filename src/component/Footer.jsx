@@ -11,30 +11,24 @@ export default function Footer() {
         </div>
         <div className="flex space-x-6">
           <motion.a
-            href="#"
+            href="https://www.linkedin.com/in/vimal-suresh-t-6273b0241/"
             whileHover={{ scale: 1.2 }}
             className="text-white text-lg font-semibold"
           >
             LinkedIn
           </motion.a>
           <motion.a
-            href="#"
+            href="https://github.com/vimal7736"
             whileHover={{ scale: 1.2 }}
-            className="text-white text-lg font-semibold"
+            className="text-[#145555] text-lg font-semibold"
           >
             GitHub
           </motion.a>
-          <motion.a
-            href="#"
-            whileHover={{ scale: 1.2 }}
-            className="text-white text-lg font-semibold"
-          >
-            Twitter
-          </motion.a>
+         
         </div>
       </div>
       <div className="mt-6 text-center text-white text-sm">
-        © {new Date().getFullYear()} Vimal Suresh T. All rights reserved.
+        © {new Date().getFullYear()} - Dogliens All rights reserved.
       </div>
     </footer>
   );
