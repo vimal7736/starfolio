@@ -13,7 +13,6 @@ import Footer from './component/Footer'
 // import data from './data.json'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   const data = {
     experience: [
@@ -60,9 +59,9 @@ function App() {
           
       },
       {
-          "title": "Marine Engineer",
-          "company": "Nautilus Shipping Co.",
-          "duration": "6 months",
+          "title": "Trainee Marine Engineer",
+          "company": "Albatross Shipping Co.",
+        //   "duration": "6 months",
           "responsibilities": [
               "Engine Maintanance"
           ]
@@ -70,8 +69,8 @@ function App() {
       },
       {
           "title": "Trainee Marine Engineer",
-          "company": "Albatross Shipping Co.",
-          "duration": "6 months",
+          "company": "Nautilus Shipping Co.",
+        //   "duration": "6 months",
           "responsibilities": [
               "Engine Maintanance"
           ]

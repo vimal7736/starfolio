@@ -64,7 +64,7 @@ export default function Hero() {
                             React js Developer
                         </span>
                         <p className='my-2 max-w-lg py-6 text-xl leading-relaxed tracking-tighter'>
-                            With over 2 years of experience in building web applications using React.js, I have a grasp of front-end technologies and modern development practices. My expertise with React, Node, MongoDB, Tailwind allows me to create seamless user experiences while maintaining code quality. Passionate about continuous learning, I thrive in collaborative environments and am always eager to take on new challenges to push the boundaries of web development.
+                        Transitioned from a marine engineer to a new career, discovering an unexpected passion along the way. I bring over 2 years ofprofessional experience in web development, specializing in React.js. I am dedicated to developing ,designing and implementing front-end solutions using React.js, ensuring good performance and delivering  good user experience.Additionally, I am currently involved in an ongoing  MERN project, where I contribute to full-stack development
                         </p>
                         <a
                             href="/vimal.pdf"
