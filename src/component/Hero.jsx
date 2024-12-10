@@ -67,7 +67,7 @@ export default function Hero() {
                         Transitioned from a marine engineer to a new career, discovering an unexpected passion along the way. I bring over 2 years ofprofessional experience in web development, specializing in React.js. I am dedicated to developing ,designing and implementing front-end solutions using React.js, ensuring good performance and delivering  good user experience.Additionally, I am currently involved in an ongoing  MERN project, where I contribute to full-stack development
                         </p>
                         <a
-                            href="/vimal.pdf"
+                            href="/vimalSureshT_CV.pdf"
                             download
                             className='bg-white rounded-full p-4 text-sm text-stone-900 mb-10'
                         >
