@@ -109,8 +109,8 @@ function App() {
             "Toastify"
         ],
         
-        "link": "https://github.com/vimal7736/jwtAuth/tree/main",
-        "github": "https://github.com/vimal7736/jwtAuth/tree/main"
+        "link": "https://github.com/vimal7736/task_management_nine_dots",
+        "github": "https://github.com/vimal7736/task_management_nine_dots"
     }
     ,
       {
