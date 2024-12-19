@@ -124,7 +124,7 @@ function App() {
               "CSS",
               "JavaScript"
           ],
-          "link": "https://todo-isuy.vercel.app/",
+          "link": "https://github.com/vimal7736/task_management_nine_dots",
           "github": "https://github.com/vimal7736/task_management_nine_dots"
       },
       {
