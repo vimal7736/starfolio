@@ -94,6 +94,26 @@ function App() {
           "github": "https://github.com/vimal7736/jwtAuth/tree/main"  
       },
       {
+        "title": "Task Management System",
+        "description": "A complete task management application with secure login and signup functionality using MERN Stack, MongoDB, Express, React, and Node.js. Features include user authentication with JWT, task creation, deletion, and updates. State management is implemented using Redux Toolkit, and API calls are made through RTK Query. Notifications are handled via Toastify.",
+        "technologies": [
+            "React",
+            "Node.js",
+            "MongoDB",
+            "JWT",
+            "Tailwind",
+            "Express",
+            "JavaScript",
+            "Redux Toolkit",
+            "RTK Query",
+            "Toastify"
+        ],
+        
+        "link": "https://jwtauth-five.vercel.app/",
+        "github": "https://github.com/vimal7736/jwtAuth/tree/main"
+    }
+    ,
+      {
           "title": "To Do",
           "description": "A versatile to-do app developed with the MERN stack (MongoDB, Express, React, Node.js). It allows users to create, update, and manage tasks efficiently. The application features a responsive design, ensuring usability across devices, making task management simple, organized, and accessible..",
           "technologies": [
@@ -105,7 +125,7 @@ function App() {
               "JavaScript"
           ],
           "link": "https://todo-isuy.vercel.app/",
-          "github": "https://github.com/vimal7736/todo/"
+          "github": "https://github.com/vimal7736/task_management_nine_dots"
       },
       {
           "title": "Ongoing Job Portal",

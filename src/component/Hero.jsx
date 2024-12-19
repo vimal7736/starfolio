@@ -61,7 +61,7 @@ export default function Hero() {
                             Vimal Suresh T
                         </h2>
                         <span className=' bg-gradient-to-r from-stone-200 to-stone-500 bg-clip-text text-3xl tracking-tighter text-transparent'>
-                            React js Developer
+                            Mern stack Developer
                         </span>
                         <p className='my-2 max-w-lg py-6 text-xl leading-relaxed tracking-tighter'>
                         Transitioned from a marine engineer to a new career, discovering an unexpected passion along the way. I bring over 2 years of professional experience in web development, specializing in React.js. I am dedicated to developing ,designing and implementing front-end solutions using React.js, ensuring good performance and delivering  good user experience.Additionally, I am currently involved in an ongoing  MERN project, where I contribute to full-stack development
