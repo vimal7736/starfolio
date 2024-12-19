@@ -109,7 +109,7 @@ function App() {
             "Toastify"
         ],
         
-        "link": "https://jwtauth-five.vercel.app/",
+        "link": "https://github.com/vimal7736/jwtAuth/tree/main",
         "github": "https://github.com/vimal7736/jwtAuth/tree/main"
     }
     ,
@@ -124,7 +124,7 @@ function App() {
               "CSS",
               "JavaScript"
           ],
-          "link": "https://github.com/vimal7736/task_management_nine_dots",
+          "link": "https://todo-isuy.vercel.app/",
           "github": "https://github.com/vimal7736/task_management_nine_dots"
       },
       {
