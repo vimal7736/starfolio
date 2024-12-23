@@ -60,7 +60,7 @@ export default function Hero() {
                         <h2 className='pb-2 text-4xl tracking-tighter lg:text-8xl'>
                             Vimal Suresh T
                         </h2>
-                        <span className=' bg-gradient-to-r from-stone-200 to-stone-500 bg-clip-text text-3xl tracking-tighter text-transparent'>
+                        <span className=' bg-gradient-to-r from-orange-400 via-teal-200 to-teal-500 bg-clip-text text-3xl tracking-tighter text-transparent'>
                             Mern stack Developer
                         </span>
                         <p className='my-2 max-w-lg py-6 text-xl leading-relaxed tracking-tighter'>

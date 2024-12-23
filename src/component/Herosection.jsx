@@ -7,8 +7,8 @@ const Herosection = () => {
   return (
     <div className="flex flex-col items-center mt-6 lg:mt-20">
         <h1 className="text-4xl sm:text-6xl lg:text-7xl text-center tracking-wide">
-            Building Exceptional <span className='bg-gradient-to-r from-orange-400
-             to-orange-800 text-transparent bg-clip-text'>MERN Stack Applications</span>
+            Building Exceptional <span className='bg-gradient-to-r from-orange-400 via-teal-300
+             to-teal-600 text-transparent bg-clip-text'>MERN Stack Applications</span>
         </h1>
         <p className="mt-10 text-lg text-center text-gray-500 max-w-4xl">
             I specialize in creating dynamic and robust web applications using the MERN stack (MongoDB, Express.js, React.js, Node.js). With a focus on scalable architectures and intuitive user interfaces, I bring ideas to life through code.
