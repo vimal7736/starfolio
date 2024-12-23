@@ -14,9 +14,7 @@ const Herosection = () => {
             I specialize in creating dynamic and robust web applications using the MERN stack (MongoDB, Express.js, React.js, Node.js). With a focus on scalable architectures and intuitive user interfaces, I bring ideas to life through code.
         </p>
 
-        <div className="flex justify-center my-10">
-            <button className='bg-gradient-to-r from-orange-500 to-blue-800 p-3 rounded-lg text-white'>Explore My Projects</button>
-        </div> 
+       
         <div className="flex mt-10 justify-center">
             <video autoPlay loop muted className='rounded-lg w-1/3 border border-x-blue-700 shadow-blue-400 mx-2 my-4'>
                 <source src={video1} type='video/mp4' />

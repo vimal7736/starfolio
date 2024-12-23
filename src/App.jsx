@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -14,6 +14,11 @@ import Herosection from './component/Herosection'
 // import data from './data.json'
 
 function App() {
+    const projectsRef = useRef(null);
+    const scrollToProjects = () => {
+        projectsRef.current.scrollIntoView({ behavior: 'smooth' });
+      };
+    
 
   const data = {
     experience: [
@@ -79,6 +84,21 @@ function App() {
       }
   ],
     projects: [
+        {
+            "title": "Ongoing Job Portal",
+            "description": "A comprehensive full-stack job portal developed using React, Tailwind CSS, Supabase, ShadCN UI, and Clerk. The platform allows users to post jobs, apply for positions, and manage applications with seamless authentication and database integration. A modern solution for job seekers and recruiters.",
+            "technologies": [
+                "React",
+                "Supabase",
+                "clerk",
+                "shadcn ui",
+                "Tailwind",
+                "CSS",
+                "JavaScript"
+            ],
+            "link": "https://jobportal-silk.vercel.app/", 
+            "github": "https://github.com/vimal7736/jobportal"  
+        },
       {
           "title": " JWT Authentication ",
           "description": "Complete Login and Signup with MERN Stack, MongoDB, Express, React and Node Authentication",
@@ -128,21 +148,7 @@ function App() {
           "link": "https://todo-isuy.vercel.app/",
           "github": "https://github.com/vimal7736/task_management_nine_dots"
       },
-      {
-          "title": "Ongoing Job Portal",
-          "description": "A comprehensive full-stack job portal developed using React, Tailwind CSS, Supabase, ShadCN UI, and Clerk. The platform allows users to post jobs, apply for positions, and manage applications with seamless authentication and database integration. A modern solution for job seekers and recruiters.",
-          "technologies": [
-              "React",
-              "Supabase",
-              "clerk",
-              "shadcn ui",
-              "Tailwind",
-              "CSS",
-              "JavaScript"
-          ],
-          "link": "https://jobportal-silk.vercel.app/", 
-          "github": "https://github.com/vimal7736/jobportal"  
-      },
+      
      
       {
           "title": "Expense Tracker",
@@ -212,9 +218,19 @@ function App() {
     <div>
       <Navbar />
       <Hero />
+      
       <Herosection/>
+      <div className="flex justify-center my-10">
+      <button
+          className="bg-gradient-to-r from-orange-500 to-blue-800 p-3 rounded-lg text-white"
+          onClick={scrollToProjects}
+        >
+          Explore My Projects
+        </button>
+        </div> 
       <Tech />
       <Experience experiences={data.experience} />
+      <div ref={projectsRef}></div>
       <Projects projects={data.projects} />
       <Education education={data.education} />
       <Contact/>
