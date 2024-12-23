@@ -10,6 +10,7 @@ import Projects from './component/Projects'
 import Education from './component/Education'
 import Contact from './component/Contact'
 import Footer from './component/Footer'
+import Herosection from './component/Herosection'
 // import data from './data.json'
 
 function App() {
@@ -211,6 +212,7 @@ function App() {
     <div>
       <Navbar />
       <Hero />
+      <Herosection/>
       <Tech />
       <Experience experiences={data.experience} />
       <Projects projects={data.projects} />
