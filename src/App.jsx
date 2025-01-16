@@ -153,20 +153,20 @@ function App() {
                 "github": "https://github.com/vimal7736/task_management_nine_dots"
             }
             ,
-            {
-                "title": "To Do",
-                "description": "A versatile to-do app developed with the MERN stack (MongoDB, Express, React, Node.js). It allows users to create, update, and manage tasks efficiently. The application features a responsive design, ensuring usability across devices, making task management simple, organized, and accessible..",
-                "technologies": [
-                    "React",
-                    "Node.js",
-                    "Express",
-                    "MongoDB",
-                    "CSS",
-                    "JavaScript"
-                ],
-                "link": "https://todo-isuy.vercel.app/",
-                "github": "https://github.com/vimal7736/task_management_nine_dots"
-            },
+            // {
+            //     "title": "To Do",
+            //     "description": "A versatile to-do app developed with the MERN stack (MongoDB, Express, React, Node.js). It allows users to create, update, and manage tasks efficiently. The application features a responsive design, ensuring usability across devices, making task management simple, organized, and accessible..",
+            //     "technologies": [
+            //         "React",
+            //         "Node.js",
+            //         "Express",
+            //         "MongoDB",
+            //         "CSS",
+            //         "JavaScript"
+            //     ],
+            //     "link": "https://todo-isuy.vercel.app/",
+            //     "github": "https://github.com/vimal7736/task_management_nine_dots"
+            // },
 
 
             {
