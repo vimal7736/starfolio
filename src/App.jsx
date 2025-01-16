@@ -182,17 +182,17 @@ function App() {
                 "github": "https://github.com/vimal7736/Expense-Tracker"
             },
 
-            {
-                "title": "Filter Cart",
-                "description": "A dynamic e-commerce filter cart project built with React, focusing on filtering products using queries and categories. The application provides a seamless user experience with a clean UI, enabling users to search, filter, and browse products effortlessly, enhancing shopping convenience and satisfaction.",
-                "technologies": [
-                    "React",
-                    "CSS",
-                    "JavaScript"
-                ],
-                "link": "https://aishu-cart.vercel.app/",
-                "github": "https://github.com/vimal7736/AishuCart"
-            },
+            // {
+            //     "title": "Filter Cart",
+            //     "description": "A dynamic e-commerce filter cart project built with React, focusing on filtering products using queries and categories. The application provides a seamless user experience with a clean UI, enabling users to search, filter, and browse products effortlessly, enhancing shopping convenience and satisfaction.",
+            //     "technologies": [
+            //         "React",
+            //         "CSS",
+            //         "JavaScript"
+            //     ],
+            //     "link": "https://aishu-cart.vercel.app/",
+            //     "github": "https://github.com/vimal7736/AishuCart"
+            // },
             //   {
             //       "title": "Making Custom Hooks",
             //       "description": "Making Helpfull hooks for my projects for easy web development",
