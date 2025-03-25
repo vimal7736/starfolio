@@ -113,7 +113,7 @@ function App() {
                     "SchadcN UI",
                     "Framer Motion",
                 ],
-                "link": "hhttps://dsa-concept-visualiser.vercel.app/",
+                "link": "https://dsa-concept-visualiser.vercel.app/",
                 "github": "https://github.com/vimal7736/DSA_Concept_Visualiser"
             },
             {
