@@ -23,7 +23,7 @@ export default function Projects({ projects }) {
               <p className="text-gray-500">{project.technologies.join(', ')}</p>
             </div>
             <div className="mt-4 flex text-center justify-center ">
-              <motion.a
+              {/* <motion.a
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -32,16 +32,16 @@ export default function Projects({ projects }) {
               >
 
                 Demo
-              </motion.a>
-              {/* <motion.a
+              </motion.a> */}
+              <motion.a
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mr-4 w-[100px] h-[40px] hover:border-teal-700 text-teal-400 border border-stone-900 rounded-full flex text-center justify-center p-2 text-sm"
                 whileHover={{ scale: 1.2, color: '#00FFDD', textShadow: '0px 0px 10px #00FFDD' }}
               >
-                Code
-              </motion.a> */}
+                Repo
+              </motion.a>
             </div>
           </motion.div>
         ))}
