@@ -89,21 +89,6 @@ function App() {
         ],
         projects: [
             {
-                "title": "Doctor Appointment Booking System",
-                "description": "A full-stack application built using the MERN stack (MongoDB, Express.js, React.js, Node.js) to manage doctor appointment bookings. This system includes three roles: patients, doctors, and administrators. Patients can register, log in, book appointments, and manage their bookings. Doctors can view appointments, track earnings, and update profiles. Administrators can manage appointments and doctor profiles. The platform also integrates online payment gateways for secure payment processing.",
-                "technologies": [
-                    "React",
-                    "Node.js",
-                    "Express.js",
-                    "MongoDB",
-                    "JavaScript",
-                    "CSS"
-                ],
-                "link": "https://doctor-appointment-bay-nine.vercel.app/",
-                "github": "https://github.com/vimal7736/doctor_appointment"
-            }
-            ,
-            {
                 "title": "Ongoing Job Portal",
                 "description": "A comprehensive full-stack job portal developed using React, Tailwind CSS, Supabase, ShadCN UI, and Clerk. The platform allows users to post jobs, apply for positions, and manage applications with seamless authentication and database integration. A modern solution for job seekers and recruiters.",
                 "technologies": [
@@ -118,6 +103,34 @@ function App() {
                 "link": "https://jobportal-silk.vercel.app/",
                 "github": "https://github.com/vimal7736/jobportal"
             },
+            {
+                "title": "DSA visualizer",
+                "description": "Data Structure visual concepts using React",
+                "technologies": [
+                    "React",
+                    "TypeScript",
+                    "Tailwind",
+                    "SchadcN UI",
+                    "Framer Motion",
+                ],
+                "link": "hhttps://dsa-concept-visualiser.vercel.app/",
+                "github": "https://github.com/vimal7736/DSA_Concept_Visualiser"
+            },
+            {
+                "title": "Doctor Appointment Booking System",
+                "description": "A full-stack application built using the MERN stack (MongoDB, Express.js, React.js, Node.js) to manage doctor appointment bookings. This system includes three roles: patients, doctors, and administrators. Patients can register, log in, book appointments, and manage their bookings. Doctors can view appointments, track earnings, and update profiles. Administrators can manage appointments and doctor profiles. The platform also integrates online payment gateways for secure payment processing.",
+                "technologies": [
+                    "React",
+                    "Node.js",
+                    "Express.js",
+                    "MongoDB",
+                    "JavaScript",
+                    "CSS"
+                ],
+                "link": "https://doctor-appointment-bay-nine.vercel.app/",
+                "github": "https://github.com/vimal7736/doctor_appointment"
+            }
+            ,
             {
                 "title": " JWT Authentication ",
                 "description": "Complete Login and Signup with MERN Stack, MongoDB, Express, React and Node Authentication",

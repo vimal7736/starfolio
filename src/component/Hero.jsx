@@ -64,7 +64,7 @@ export default function Hero() {
                             Mern stack Developer
                         </span>
                         <p className='my-2 max-w-lg py-6 text-xl leading-relaxed tracking-tighter'>
-                        Transitioned from a marine engineer to a new career, discovering an unexpected passion along the way. I bring over 2 years of professional experience in web development, specializing in React.js. I am dedicated to developing ,designing and implementing front-end solutions using React.js, ensuring good performance and delivering  good user experience.Additionally, I am currently involved in an ongoing  MERN project, where I contribute to full-stack development
+                        Transitioned from a marine engineer to a new career, discovering an unexpected passion along the way. I bring over 2 .7 years of professional experience in web development, specializing in React.js. I am dedicated to developing ,designing and implementing front-end solutions using React.js, ensuring good performance and delivering  good user experience.Additionally, I am currently involved in an ongoing  MERN project, where I contribute to full-stack development
                         </p>
                         <a
                             href="/vimalSureshT_CV.pdf"
