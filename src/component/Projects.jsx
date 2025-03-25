@@ -33,7 +33,7 @@ export default function Projects({ projects }) {
 
                 Demo
               </motion.a>
-              <motion.a
+              {/* <motion.a
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -41,7 +41,7 @@ export default function Projects({ projects }) {
                 whileHover={{ scale: 1.2, color: '#00FFDD', textShadow: '0px 0px 10px #00FFDD' }}
               >
                 Code
-              </motion.a>
+              </motion.a> */}
             </div>
           </motion.div>
         ))}
