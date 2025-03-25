@@ -195,28 +195,28 @@ function App() {
                 "github": "https://github.com/vimal7736/Expense-Tracker"
             },
 
-            // {
-            //     "title": "Filter Cart",
-            //     "description": "A dynamic e-commerce filter cart project built with React, focusing on filtering products using queries and categories. The application provides a seamless user experience with a clean UI, enabling users to search, filter, and browse products effortlessly, enhancing shopping convenience and satisfaction.",
-            //     "technologies": [
-            //         "React",
-            //         "CSS",
-            //         "JavaScript"
-            //     ],
-            //     "link": "https://aishu-cart.vercel.app/",
-            //     "github": "https://github.com/vimal7736/AishuCart"
-            // },
-            //   {
-            //       "title": "Making Custom Hooks",
-            //       "description": "Making Helpfull hooks for my projects for easy web development",
-            //       "technologies": [
-            //           "React",
-            //           "CSS",
-            //           "JavaScript"
-            //       ],
-            //       "link": "https://customhook-nu.vercel.app/", 
-            //       "github": "https://github.com/vimal7736/customhook"  
-            //   },
+            {
+                "title": "Filter Cart",
+                "description": "A dynamic e-commerce filter cart project built with React, focusing on filtering products using queries and categories. The application provides a seamless user experience with a clean UI, enabling users to search, filter, and browse products effortlessly, enhancing shopping convenience and satisfaction.",
+                "technologies": [
+                    "React",
+                    "CSS",
+                    "JavaScript"
+                ],
+                "link": "https://aishu-cart.vercel.app/",
+                "github": "https://github.com/vimal7736/AishuCart"
+            },
+              {
+                  "title": "Making Custom Hooks",
+                  "description": "Making Helpfull hooks for my projects for easy web development",
+                  "technologies": [
+                      "React",
+                      "CSS",
+                      "JavaScript"
+                  ],
+                  "link": "https://customhook-nu.vercel.app/", 
+                  "github": "https://github.com/vimal7736/customhook"  
+              },
             {
                 "title": "Ongoing Fullstack",
                 "description": "A full-stack real estate application developed using React, Node.js, Express, Prisma, and MongoDB. It enables users to browse, list, and manage real estate properties. The app offers a robust backend with a user-friendly frontend, combining modern design with powerful functionality for property management.",
