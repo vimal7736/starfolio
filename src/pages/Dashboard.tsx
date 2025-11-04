@@ -1,3 +1,5 @@
+import { useEffect, useRef, useState } from "react"
+
 import { motion } from "framer-motion"
 import {
   Building2,
@@ -9,9 +11,27 @@ import {
   Shield,
   Wrench,
   Zap,
+  ChevronDown,
+  User,
+  Briefcase,
+  Code,
+  Target,
+  Layers,
+  Workflow,
+  BookOpen,
+  Palette,
+  Home,
+  Github,
+  Linkedin,
+  Download,
+  MoreVertical,
+  ExternalLink,
+  LogOut,
+  FileText,
 } from "lucide-react"
 import { useNavigate } from "react-router-dom"
 
+import { PDFViewer } from "@/components/pdf/PDFViewer"
 import {
   Badge,
   Button,
@@ -22,7 +42,7 @@ import {
   CardTitle,
   Separator,
 } from "@/components/ui"
-import { useAppDispatch, useAppSelector } from "@/store/hooks"
+import { useAppDispatch } from "@/store/hooks"
 import { logout } from "@/store/slices/authSlice"
 
 const containerVariants = {
@@ -49,49 +69,116 @@ const itemVariants = {
 export default function Dashboard() {
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
-  const { user } = useAppSelector((state) => state.auth)
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+  const [isMoreMenuOpen, setIsMoreMenuOpen] = useState(false)
+  const [showPDFPreview, setShowPDFPreview] = useState(false)
+  const dropdownRef = useRef<HTMLDivElement>(null)
+  const moreMenuRef = useRef<HTMLDivElement>(null)
 
   const handleLogout = () => {
     dispatch(logout())
     navigate("/")
   }
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" })
+      setIsDropdownOpen(false)
+    }
+  }
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsDropdownOpen(false)
+      }
+      if (
+        moreMenuRef.current &&
+        !moreMenuRef.current.contains(event.target as Node)
+      ) {
+        setIsMoreMenuOpen(false)
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside)
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+  }, [])
+
+  const pageNavItems = [
+    { path: "/dashboard", label: "Dashboard", icon: Home },
+    { path: "/projects", label: "Projects", icon: Code },
+    { path: "/designs", label: "Designs", icon: Palette },
+  ]
+
+  const navItems = [
+    { id: "profile", label: "Profile", icon: User },
+    { id: "work-history", label: "Work History", icon: Briefcase },
+    { id: "projects", label: "Projects", icon: Code },
+    { id: "skills", label: "Skills", icon: Target },
+    { id: "tech-stack", label: "Technology Stack", icon: Layers },
+    { id: "architecture", label: "Architecture", icon: Building2 },
+    { id: "project-flow", label: "Project Flow", icon: Workflow },
+    { id: "features", label: "Key Features", icon: Rocket },
+    {
+      id: "what-i-do",
+      label: "What I Do",
+      icon: BookOpen,
+    },
+  ]
+
+  const handlePageNavigate = (path: string) => {
+    navigate(path)
+    setIsDropdownOpen(false)
+  }
+
   const workHistory = [
     {
       company: "Tecbert LLP",
-      period: "Sep 2023 - Present",
+      period: "September 2023 - Present",
       location: "Calicut, India",
       role: "React.js Developer",
       achievements: [
-        "Built responsive UIs using React.js, TypeScript, Redux Toolkit, and RTK Query ensuring optimal performance",
+        "Developed and maintained web applications using React.js, TypeScript, Redux Toolkit, and RTK Query ensuring optimal performance",
+        "Collaborated with cross-functional teams to define, design, and ship new features",
+        "Improved application performance by optimizing code and implementing best practices",
         "Integrated Supabase for real-time data synchronization and backend services",
         "Implemented secure authentication with JWT and Keycloak for enterprise identity management with RBAC",
         "Designed modern UIs with Tailwind CSS and shadcn/ui maintaining design consistency",
-        "Utilized AI tools (ChatGPT, Copilot, Claude) for rapid prototyping, optimization, and architecture decisions",
         "Leveraged React Hook Form for efficient form management with complex validation across multi-step forms",
         "Built data-rich interfaces using TanStack Table for advanced visualization, sorting, filtering, and pagination",
       ],
+      projects: ["Customer Onboarding Platform"],
     },
     {
       company: "Infinite Open Source Solutions LLP",
-      period: "Dec 2022 - Aug 2023",
+      period: "December 2022 - July 2023",
       location: "Calicut, India",
       role: "React.js Developer",
       achievements: [
+        "Developed and maintained web applications using React.js",
+        "Assisted in database design and optimization",
+        "Participated in code reviews and provided constructive feedback",
         "Migrated legacy Laravel applications to React.js, improving UI/UX, performance, and maintainability",
         "Developed custom React hooks for code reusability, reducing development time by 25%",
         "Enhanced UX with real-time features including session tracking with live clock timers",
         "Collaborated with backend teams to design and consume RESTful APIs",
       ],
+      projects: ["Time Tracking Software", "Direct Selling Software"],
     },
     {
-      company: "Futura Labs",
-      period: "May 2022 - Dec 2022",
+      company: "Futura Lab",
+      period: "June 2022 - December 2022",
       location: "Calicut, India",
       role: "MERN Stack Intern",
       achievements: [
+        "Learning web applications using MERN stack",
         "Built full-stack e-commerce features including dynamic filter cart functionality",
-        "Developed reusable custom hooks improving code quality and productivity",
         "Gained hands-on experience with MongoDB, Express.js, React.js, and Node.js stack",
       ],
     },
@@ -211,6 +298,13 @@ export default function Dashboard() {
 
   return (
     <div className="min-h-screen bg-background">
+      {showPDFPreview && (
+        <PDFViewer
+          pdfUrl="/Vimal_Suresh_T.pdf"
+          title="Vimal Suresh T - Resume"
+          onClose={() => setShowPDFPreview(false)}
+        />
+      )}
       <header className="border-b border-border bg-background sticky top-0 z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
@@ -218,21 +312,222 @@ export default function Dashboard() {
               Vimal&apos;s Folio
             </div>
             <div className="flex items-center gap-4">
-              <Button variant="ghost" onClick={() => navigate("/")}>
-                {user && (
+              <div className="relative" ref={dropdownRef}>
+                <Button
+                  variant="ghost"
+                  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                  className="flex items-center gap-2"
+                >
                   <span className="text-sm text-[var(--color-text-muted)] text-glow">
-                    Welcome, {user.username || user.email}
+                    Navigate
                   </span>
-                )}
-              </Button>
+                  <ChevronDown
+                    className={`w-4 h-4 transition-transform ${
+                      isDropdownOpen ? "rotate-180" : ""
+                    }`}
+                  />
+                </Button>
 
-              <Button
-                className="cursor-pointer"
-                variant="raised"
-                onClick={handleLogout}
-              >
-                Logout
-              </Button>
+                {isDropdownOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    className="absolute right-0 mt-2 w-56 bg-[var(--color-bg-secondary)] rounded-lg border border-border shadow-[var(--shadow-raised-lg)] z-50"
+                  >
+                    <div className="py-2">
+                      <div className="px-4 py-2 text-xs font-semibold text-[var(--color-text-muted)] uppercase">
+                        Pages
+                      </div>
+                      {pageNavItems.map((item) => {
+                        const Icon = item.icon
+                        return (
+                          <button
+                            key={item.path}
+                            onClick={() => handlePageNavigate(item.path)}
+                            className="w-full flex items-center gap-3 px-4 py-2 text-sm text-foreground hover:bg-[var(--color-bg-base)] transition-colors text-left"
+                          >
+                            <Icon className="w-4 h-4 text-primary" />
+                            <span className="text-glow">{item.label}</span>
+                          </button>
+                        )
+                      })}
+                      <div className="border-t border-border my-2" />
+                      <div className="px-4 py-2 text-xs font-semibold text-[var(--color-text-muted)] uppercase">
+                        Sections
+                      </div>
+                      {navItems.map((item) => {
+                        const Icon = item.icon
+                        return (
+                          <button
+                            key={item.id}
+                            onClick={() => scrollToSection(item.id)}
+                            className="w-full flex items-center gap-3 px-4 py-2 text-sm text-foreground hover:bg-[var(--color-bg-base)] transition-colors text-left"
+                          >
+                            <Icon className="w-4 h-4 text-primary" />
+                            <span className="text-glow">{item.label}</span>
+                          </button>
+                        )
+                      })}
+                    </div>
+                  </motion.div>
+                )}
+              </div>
+
+              <div className="flex items-center gap-2">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() =>
+                    window.open("https://github.com/vimal7736", "_blank")
+                  }
+                  className="hidden sm:flex"
+                  title="GitHub"
+                >
+                  <Github className="w-4 h-4 text-[var(--color-text-muted)]" />
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() =>
+                    window.open(
+                      "https://www.linkedin.com/in/vimal-suresh-t-6273b0241/",
+                      "_blank"
+                    )
+                  }
+                  className="hidden sm:flex"
+                  title="LinkedIn"
+                >
+                  <Linkedin className="w-4 h-4 text-[var(--color-text-muted)]" />
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() =>
+                    (window.location.href = "mailto:vimalonboard69@gmail.com")
+                  }
+                  className="hidden sm:flex"
+                  title="Email"
+                >
+                  <Mail className="w-4 h-4 text-[var(--color-text-muted)]" />
+                </Button>
+              </div>
+
+              <div className="relative" ref={moreMenuRef}>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => setIsMoreMenuOpen(!isMoreMenuOpen)}
+                  className="flex items-center gap-1"
+                >
+                  <MoreVertical className="w-4 h-4" />
+                </Button>
+
+                {isMoreMenuOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    className="absolute right-0 mt-2 w-48 bg-[var(--color-bg-secondary)] rounded-lg border border-border shadow-[var(--shadow-raised-lg)] z-50"
+                  >
+                    <div className="py-2">
+                      <button
+                        onClick={() => {
+                          window.open("https://github.com/vimal7736", "_blank")
+                          setIsMoreMenuOpen(false)
+                        }}
+                        className="w-full flex items-center gap-3 px-4 py-2 text-sm text-foreground hover:bg-[var(--color-bg-base)] transition-colors text-left"
+                      >
+                        <Github className="w-4 h-4 text-primary" />
+                        <span className="text-glow">GitHub</span>
+                        <ExternalLink className="w-3 h-3 ml-auto text-[var(--color-text-muted)]" />
+                      </button>
+                      <button
+                        onClick={() => {
+                          window.open(
+                            "https://www.linkedin.com/in/vimal-suresh-t-6273b0241/",
+                            "_blank"
+                          )
+                          setIsMoreMenuOpen(false)
+                        }}
+                        className="w-full flex items-center gap-3 px-4 py-2 text-sm text-foreground hover:bg-[var(--color-bg-base)] transition-colors text-left"
+                      >
+                        <Linkedin className="w-4 h-4 text-primary" />
+                        <span className="text-glow">LinkedIn</span>
+                        <ExternalLink className="w-3 h-3 ml-auto text-[var(--color-text-muted)]" />
+                      </button>
+                      <button
+                        onClick={() => {
+                          window.location.href =
+                            "mailto:vimalonboard69@gmail.com"
+                          setIsMoreMenuOpen(false)
+                        }}
+                        className="w-full flex items-center gap-3 px-4 py-2 text-sm text-foreground hover:bg-[var(--color-bg-base)] transition-colors text-left"
+                      >
+                        <Mail className="w-4 h-4 text-primary" />
+                        <span className="text-glow">Email</span>
+                      </button>
+                      <div className="border-t border-border my-2" />
+                      <button
+                        onClick={() => {
+                          window.open("tel:+917736173889", "_self")
+                          setIsMoreMenuOpen(false)
+                        }}
+                        className="w-full flex items-center gap-3 px-4 py-2 text-sm text-foreground hover:bg-[var(--color-bg-base)] transition-colors text-left"
+                      >
+                        <Phone className="w-4 h-4 text-primary" />
+                        <span className="text-glow">Call</span>
+                      </button>
+                      <button
+                        onClick={() => {
+                          setShowPDFPreview(true)
+                          setIsMoreMenuOpen(false)
+                        }}
+                        className="w-full flex items-center gap-3 px-4 py-2 text-sm text-foreground hover:bg-[var(--color-bg-base)] transition-colors text-left"
+                      >
+                        <FileText className="w-4 h-4 text-primary" />
+                        <span className="text-glow">Preview Resume</span>
+                      </button>
+                      <button
+                        onClick={() => {
+                          const link = document.createElement("a")
+                          link.href = "/Vimal_Suresh_T.pdf"
+                          link.download = "Vimal_Suresh_T_Resume.pdf"
+                          document.body.appendChild(link)
+                          link.click()
+                          document.body.removeChild(link)
+                          setIsMoreMenuOpen(false)
+                        }}
+                        className="w-full flex items-center gap-3 px-4 py-2 text-sm text-foreground hover:bg-[var(--color-bg-base)] transition-colors text-left"
+                      >
+                        <Download className="w-4 h-4 text-primary" />
+                        <span className="text-glow">Download Resume</span>
+                      </button>
+                      <div className="border-t border-border my-2" />
+                      <button
+                        onClick={() => {
+                          navigate("/")
+                          setIsMoreMenuOpen(false)
+                        }}
+                        className="w-full flex items-center gap-3 px-4 py-2 text-sm text-foreground hover:bg-[var(--color-bg-base)] transition-colors text-left"
+                      >
+                        <Home className="w-4 h-4 text-primary" />
+                        <span className="text-glow">Home</span>
+                      </button>
+                      <button
+                        onClick={() => {
+                          handleLogout()
+                          setIsMoreMenuOpen(false)
+                        }}
+                        className="w-full flex items-center gap-3 px-4 py-2 text-sm text-danger hover:bg-[var(--color-bg-base)] transition-colors text-left"
+                      >
+                        <LogOut className="w-4 h-4 text-danger" />
+                        <span className="text-danger">Logout</span>
+                      </button>
+                    </div>
+                  </motion.div>
+                )}
+              </div>
             </div>
           </div>
         </div>
@@ -246,10 +541,11 @@ export default function Dashboard() {
           className="space-y-12"
         >
           <motion.section
+            id="profile"
             variants={itemVariants}
             className="text-center space-y-4"
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground text-glow-strong">
+            <h1 className="text-4xl md:text-5xl font-bold text-glow-purple-strong">
               Vimal Suresh T
             </h1>
             <div className="flex flex-wrap justify-center gap-4 text-sm text-[var(--color-text-muted)]">
@@ -268,12 +564,38 @@ export default function Dashboard() {
                 vimalonboard69@gmail.com
               </span>
             </div>
+
+            <motion.div
+              className="flex justify-center gap-4 mt-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+            >
+              <Button
+                variant="primary"
+                size="lg"
+                onClick={() => navigate("/projects")}
+                className="flex items-center gap-2"
+              >
+                <Code className="w-5 h-5" />
+                View Projects
+              </Button>
+              <Button
+                variant="ghost"
+                size="lg"
+                onClick={() => navigate("/designs")}
+                className="flex items-center gap-2"
+              >
+                <Palette className="w-5 h-5" />
+                View Designs
+              </Button>
+            </motion.div>
           </motion.section>
 
-          <motion.section variants={itemVariants}>
+          <motion.section id="profile" variants={itemVariants}>
             <Card variant="raised" className="p-8">
               <CardHeader>
-                <CardTitle className="text-2xl text-glow">
+                <CardTitle className="text-2xl text-glow-green">
                   Professional Summary
                 </CardTitle>
               </CardHeader>
@@ -292,9 +614,9 @@ export default function Dashboard() {
             </Card>
           </motion.section>
 
-          <motion.section variants={itemVariants}>
+          <motion.section id="work-history" variants={itemVariants}>
             <div className="space-y-6">
-              <h2 className="text-3xl font-semibold text-foreground text-glow">
+              <h2 className="text-3xl font-semibold text-glow-purple">
                 Work History
               </h2>
               <div className="space-y-6">
@@ -333,6 +655,24 @@ export default function Dashboard() {
                             </li>
                           ))}
                         </ul>
+                        {job.projects && job.projects.length > 0 && (
+                          <div className="mt-4 pt-4 border-t border-border">
+                            <p className="text-sm font-semibold text-foreground mb-2 text-glow">
+                              Projects:
+                            </p>
+                            <div className="flex flex-wrap gap-2">
+                              {job.projects.map((project, idx) => (
+                                <Badge
+                                  key={idx}
+                                  variant="secondary"
+                                  className="text-xs"
+                                >
+                                  {project}
+                                </Badge>
+                              ))}
+                            </div>
+                          </div>
+                        )}
                       </CardContent>
                     </Card>
                   </motion.div>
@@ -341,9 +681,9 @@ export default function Dashboard() {
             </div>
           </motion.section>
 
-          <motion.section variants={itemVariants}>
+          <motion.section id="projects" variants={itemVariants}>
             <div className="space-y-6">
-              <h2 className="text-3xl font-semibold text-foreground text-glow">
+              <h2 className="text-3xl font-semibold text-glow-green">
                 Professional Highlights
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -405,9 +745,9 @@ export default function Dashboard() {
             </div>
           </motion.section>
 
-          <motion.section variants={itemVariants}>
+          <motion.section id="skills" variants={itemVariants}>
             <div className="space-y-6">
-              <h2 className="text-3xl font-semibold text-foreground text-glow">
+              <h2 className="text-3xl font-semibold text-glow-purple">
                 Skills
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -476,9 +816,13 @@ export default function Dashboard() {
             </div>
           </motion.section>
 
-          <motion.section variants={itemVariants} className="space-y-8">
+          <motion.section
+            id="tech-stack"
+            variants={itemVariants}
+            className="space-y-8"
+          >
             <div className="text-center">
-              <h2 className="text-3xl font-semibold text-foreground mb-4 text-glow">
+              <h2 className="text-3xl font-semibold mb-4 text-glow-green">
                 Technology Stack
               </h2>
               <p className="text-lg text-[var(--color-text-muted)] max-w-2xl mx-auto">
@@ -529,9 +873,13 @@ export default function Dashboard() {
             </div>
           </motion.section>
 
-          <motion.section variants={itemVariants} className="space-y-8">
+          <motion.section
+            id="architecture"
+            variants={itemVariants}
+            className="space-y-8"
+          >
             <div className="text-center">
-              <h2 className="text-3xl font-semibold text-foreground mb-4 text-glow">
+              <h2 className="text-3xl font-semibold mb-4 text-glow-purple">
                 Architecture Pattern
               </h2>
               <p className="text-lg text-[var(--color-text-muted)] mb-8">
@@ -588,9 +936,13 @@ export default function Dashboard() {
             </Card>
           </motion.section>
 
-          <motion.section variants={itemVariants} className="space-y-8">
+          <motion.section
+            id="features"
+            variants={itemVariants}
+            className="space-y-8"
+          >
             <div className="text-center">
-              <h2 className="text-3xl font-semibold text-foreground mb-4 text-glow">
+              <h2 className="text-3xl font-semibold mb-4 text-glow-purple">
                 Key Features
               </h2>
               <p className="text-lg text-[var(--color-text-muted)] max-w-2xl mx-auto">
@@ -799,7 +1151,7 @@ export default function Dashboard() {
             </div>
           </motion.section>
 
-          <motion.section variants={itemVariants}>
+          <motion.section id="what-i-do" variants={itemVariants}>
             <Card variant="raised" className="p-8 border-2 border-primary">
               <CardHeader>
                 <CardTitle className="text-2xl text-glow-strong">
