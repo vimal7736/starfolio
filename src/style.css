@@ -1,0 +1,299 @@
+@import "tailwindcss";
+
+@theme {
+  /* Base Colors - Dark Neumorphic Theme with Blue Glow */
+  --color-background: #1a1a1f;
+  --color-foreground: #2196f3;
+
+  /* Semantic Text Colors - Blue */
+  --color-text: #2196f3;
+  --color-text-secondary: #64b5f6;
+  --color-text-muted: #90caf9;
+  --color-text-placeholder: #bbdefb;
+  --color-primary: #ffffff;
+  --color-secondary: #c0d8ff;
+  --color-danger: #ff5252;
+  --color-success: #4caf50;
+  --color-warning: #ff9800;
+  --color-info: #2196f3;
+
+  /* Semantic Background Colors */
+  --color-bg-base: #1a1a1f;
+  --color-bg-secondary: #25252a;
+  --color-bg-primary: #2196f3;
+  --color-bg-primary-hover: #1976d2;
+  --color-bg-primary-light: #64b5f6;
+  --color-bg-primary-dark: #1565c0;
+
+  /* Semantic Background Colors */
+  --color-bg-danger: #3d2525;
+  --color-bg-danger-hover: #4a2d2d;
+  --color-bg-danger-light: #4d3030;
+  --color-bg-danger-lighter: #5d4040;
+  --color-bg-danger-dark: #2d1a1a;
+  --color-bg-danger-darkest: #1f0f0f;
+
+  --color-bg-success: #253d25;
+  --color-bg-success-light: #2d4d2d;
+  --color-bg-success-dark: #1f3d1f;
+
+  --color-bg-warning: #3d3525;
+  --color-bg-warning-light: #4d452d;
+  --color-bg-warning-dark: #2d251f;
+
+  --color-bg-info: #25353d;
+  --color-bg-info-light: #2d454d;
+  --color-bg-info-dark: #1f2d35;
+
+  /* Border Colors */
+  --color-border: #2d2d35;
+  --color-border-light: #35353f;
+  --color-border-secondary: #3a3a45;
+  --color-border-hover: #25252f;
+
+  /* Text Semantic Colors with Blue Glow */
+  --color-text-danger: #ff5252;
+  --color-text-danger-dark: #ff1744;
+  --color-text-success: #4caf50;
+  --color-text-warning: #ff9800;
+  --color-text-info: #2196f3;
+  --color-text-primary: #ffffff;
+
+  /* Shadow Colors - Dark neumorphic shadows */
+  --color-shadow-dark: #0f0f15;
+  --color-shadow-light: #2a2a35;
+  --color-shadow-secondary-dark: #151520;
+  /* Primary shadows with blue tint */
+  --color-shadow-primary-dark: #0d47a1;
+  --color-shadow-primary-light: #64b5f6;
+  --color-shadow-danger-dark: #2d0f0f;
+  --color-shadow-danger-darkest: #1f0505;
+  --color-shadow-danger-light: #4d3030;
+  --color-shadow-success-dark: #1f3d1f;
+  --color-shadow-warning-dark: #2d251f;
+  --color-shadow-info-dark: #1f2d35;
+
+  /* Focus/Ring Colors - Blue Glow */
+  --color-ring: #2196f3;
+  --color-ring-focus: #64b5f6;
+
+  /* Card Colors */
+  --color-card: oklch(100% 0 0);
+  --color-card-foreground: oklch(9.8% 0 0);
+
+  /* Popover Colors */
+  --color-popover: oklch(100% 0 0);
+  --color-popover-foreground: oklch(9.8% 0 0);
+
+  /* Legacy shadcn colors (keeping for compatibility) */
+  --color-primary: oklch(9.8% 0 0);
+  --color-primary-foreground: oklch(98% 0 0);
+  --color-secondary: oklch(96.1% 0 0);
+  --color-secondary-foreground: oklch(9.8% 0 0);
+  --color-muted: oklch(96.1% 0 0);
+  --color-muted-foreground: oklch(45.1% 0 0);
+  --color-accent: oklch(96.1% 0 0);
+  --color-accent-foreground: oklch(9.8% 0 0);
+  --color-destructive: oklch(62.8% 0.25768 29.23388);
+  --color-destructive-foreground: oklch(98% 0 0);
+  --color-input: oklch(89.8% 0 0);
+
+  --radius: 0.5rem;
+}
+
+/* Base Styles */
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
+
+/* Blue Glow Text Effects */
+.text-glow {
+  color: #2196f3;
+  text-shadow:
+    0 0 6px rgba(33, 150, 243, 0.3),
+    0 0 12px rgba(33, 150, 243, 0.15),
+    0 0 18px rgba(33, 150, 243, 0.08);
+}
+
+.text-glow-strong {
+  color: #2196f3;
+  text-shadow:
+    0 0 8px rgba(33, 150, 243, 0.4),
+    0 0 15px rgba(33, 150, 243, 0.2),
+    0 0 22px rgba(33, 150, 243, 0.1);
+}
+
+/* Red Text Without Glow */
+.text-danger-no-glow {
+  color: var(--color-danger);
+  text-shadow: none;
+}
+
+/* Blue Glow Box Shadow */
+.box-glow {
+  box-shadow:
+    0 0 10px rgba(33, 150, 243, 0.3),
+    0 0 20px rgba(33, 150, 243, 0.2);
+}
+
+.box-glow-strong {
+  box-shadow:
+    0 0 15px rgba(33, 150, 243, 0.5),
+    0 0 30px rgba(33, 150, 243, 0.3),
+    0 0 45px rgba(33, 150, 243, 0.2);
+}
+
+/* Neumorphic Shadow Utilities - Dark Theme */
+:root {
+  /* Neumorphic shadow variables for dark theme */
+  --neu-bg: var(--color-background);
+  --neu-dark-shadow: var(--color-shadow-dark);
+  --neu-light-shadow: var(--color-shadow-light);
+
+  /* Shadow presets - Dark neumorphic shadows */
+  --shadow-raised-sm:
+    4px 4px 8px var(--color-shadow-dark),
+    -4px -4px 8px var(--color-shadow-light);
+  --shadow-raised:
+    6px 6px 12px var(--color-shadow-dark),
+    -6px -6px 12px var(--color-shadow-light);
+  --shadow-raised-lg:
+    8px 8px 16px var(--color-shadow-dark),
+    -8px -8px 16px var(--color-shadow-light);
+  --shadow-raised-xl:
+    10px 10px 20px var(--color-shadow-dark),
+    -10px -10px 20px var(--color-shadow-light);
+  --shadow-raised-2xl:
+    12px 12px 24px var(--color-shadow-dark),
+    -12px -12px 24px var(--color-shadow-light);
+  --shadow-raised-3xl:
+    15px 15px 30px var(--color-shadow-dark),
+    -15px -15px 30px var(--color-shadow-light);
+
+  --shadow-inset-sm:
+    inset 2px 2px 4px var(--color-shadow-dark),
+    inset -2px -2px 4px var(--color-shadow-light);
+  --shadow-inset:
+    inset 3px 3px 6px var(--color-shadow-dark),
+    inset -3px -3px 6px var(--color-shadow-light);
+  --shadow-inset-md:
+    inset 6px 6px 12px var(--color-shadow-dark),
+    inset -6px -6px 12px var(--color-shadow-light);
+  --shadow-inset-lg:
+    inset 8px 8px 16px var(--color-shadow-dark),
+    inset -8px -8px 16px var(--color-shadow-light);
+
+  /* Primary button shadows - same as raised buttons */
+  --shadow-primary:
+    6px 6px 12px var(--color-shadow-dark),
+    -6px -6px 12px var(--color-shadow-light);
+  --shadow-primary-inset:
+    inset 3px 3px 6px var(--color-shadow-dark),
+    inset -3px -3px 6px var(--color-shadow-light);
+
+  /* Destructive button shadows - same as raised buttons */
+  --shadow-danger:
+    6px 6px 12px var(--color-shadow-dark),
+    -6px -6px 12px var(--color-shadow-light);
+  --shadow-danger-inset:
+    inset 3px 3px 6px var(--color-shadow-dark),
+    inset -3px -3px 6px var(--color-shadow-light);
+  --shadow-danger-sm:
+    4px 4px 8px var(--color-shadow-dark),
+    -4px -4px 8px var(--color-shadow-light);
+
+  --shadow-success-sm:
+    4px 4px 8px var(--color-shadow-success-dark),
+    -4px -4px 8px var(--color-shadow-light);
+  --shadow-warning-sm:
+    4px 4px 8px var(--color-shadow-warning-dark),
+    -4px -4px 8px var(--color-shadow-light);
+  --shadow-info-sm:
+    4px 4px 8px var(--color-shadow-info-dark),
+    -4px -4px 8px var(--color-shadow-light);
+}
+
+/* Apply blue glow to primary text elements */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-foreground);
+  text-shadow:
+    0 0 6px rgba(33, 150, 243, 0.3),
+    0 0 12px rgba(33, 150, 243, 0.15),
+    0 0 18px rgba(33, 150, 243, 0.08);
+}
+
+/* Slider Styles */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input[type="range"]::-webkit-slider-track {
+  background: var(--color-background);
+  border-radius: 9999px;
+  box-shadow: var(--shadow-inset);
+  height: 100%;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background: var(--color-foreground);
+  border-radius: 50%;
+  box-shadow: var(--shadow-raised-sm);
+  cursor: pointer;
+  height: 18px;
+  width: 18px;
+  margin-top: -7px;
+}
+
+input[type="range"]::-moz-range-track {
+  background: var(--color-background);
+  border-radius: 9999px;
+  box-shadow: var(--shadow-inset);
+  height: 100%;
+}
+
+input[type="range"]::-moz-range-thumb {
+  background: var(--color-foreground);
+  border: none;
+  border-radius: 50%;
+  box-shadow: var(--shadow-raised-sm);
+  cursor: pointer;
+  height: 18px;
+  width: 18px;
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+
+input[type="range"]:focus::-webkit-slider-thumb {
+  box-shadow:
+    var(--shadow-raised-sm),
+    0 0 0 3px rgba(33, 150, 243, 0.2);
+}
+
+input[type="range"]:focus::-moz-range-thumb {
+  box-shadow:
+    var(--shadow-raised-sm),
+    0 0 0 3px rgba(33, 150, 243, 0.2);
+}
+
+/* Switch checked state */
+.switch-checked {
+  background-color: var(--color-bg-primary);
+}
+
+/* Checkbox and Radio checked states */
+.checkbox-checked,
+.radio-checked {
+  background-color: var(--color-bg-primary);
+  box-shadow: var(--shadow-raised-sm);
+}
