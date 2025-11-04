@@ -12,7 +12,6 @@ import {
 } from "lucide-react"
 import { useNavigate } from "react-router-dom"
 
-import { ProjectFlowDiagram } from "@/components/diagrams/ProjectFlowDiagram"
 import {
   Badge,
   Button,
@@ -587,19 +586,6 @@ export default function Dashboard() {
                 </div>
               </div>
             </Card>
-          </motion.section>
-
-          <motion.section variants={itemVariants} className="space-y-8">
-            <div className="text-center">
-              <h2 className="text-3xl font-semibold text-foreground mb-4 text-glow">
-                How The Project Works - Animated Flow
-              </h2>
-              <p className="text-lg text-[var(--color-text-muted)] mb-8">
-                Interactive visualization showing application flow, state
-                management, and form handling processes
-              </p>
-            </div>
-            <ProjectFlowDiagram />
           </motion.section>
 
           <motion.section variants={itemVariants} className="space-y-8">
